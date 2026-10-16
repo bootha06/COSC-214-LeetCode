@@ -1,0 +1,20 @@
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+public class Problem2 {
+    public static void main(String[] args) {
+
+        Deque<String> myQueue = new ArrayDeque<>();
+
+        myQueue.add("Amani");
+        myQueue.add("Ethan");
+        myQueue.add("Victory");
+        myQueue.add("Ngozika");
+        myQueue.add("Chibueze");
+
+        for (String name : myQueue) {
+            System.out.println(name);
+        }
+    }
+}
+
