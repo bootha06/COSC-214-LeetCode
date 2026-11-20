@@ -1,0 +1,18 @@
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
+public class Level1Prob11 {
+    public static void main (String [] args){
+
+        Integer [] arr = {4, 2, 7, 1};
+
+        // convert array to min heap
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(Arrays.asList(arr)); // time complexity = O(n log n)
+
+        System.out.print("Output from the Heap: ");
+        //poll/remove min from the heap one by one
+        while(!minHeap.isEmpty()){
+            System.out.print(minHeap.remove() + " ");
+        }
+    }
+}
