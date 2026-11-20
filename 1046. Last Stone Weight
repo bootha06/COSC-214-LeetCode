@@ -1,0 +1,33 @@
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+class Solution {
+
+    public int lastStoneWeight(int[] stones) {
+
+        PriorityQueue<Integer> maxHeap =
+                new PriorityQueue<>(Collections.reverseOrder());
+
+        // insert elements into heap
+        for (int stone : stones) {
+            maxHeap.add(stone);
+        }
+
+        // repeatedly process two largest elements
+        while (maxHeap.size() > 1) {
+
+            int first = maxHeap.remove();
+            int second = maxHeap.remove();
+
+            if (first != second) {
+                maxHeap.add(first - second);
+            }
+        }
+
+        if (maxHeap.isEmpty()) {
+            return 0;
+        }
+
+        return maxHeap.remove();
+    }
+}
